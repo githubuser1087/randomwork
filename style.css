@@ -1,0 +1,191 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.codepen-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #C2D9D9;
+  height: 1000px;
+}
+
+.book {
+  width: 300px;
+  font-size: 1.4rem;
+  box-shadow: 1rem 2rem 3rem rgba(0, 0, 0, 0.25);
+  text-align: center;
+  position: relative;
+  color: #484e4a;
+  top: 50px;
+}
+
+.page {
+  width: 500px;
+  height: 700px;
+  perspective: 1500px;
+}
+.page__1 {
+  background-color: #FFDEE3;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: all 1s 0.3s;
+  transform-origin: 0 50%;
+  z-index: 2;
+}
+.page__1::after {
+  content: "Dear Homeostasis, \a\a" "Thank you for maintaining stable internal conditions despite the external changes and thank you for keeping my temperature, pH, and nutrient levels within a stable range for my cells to function properly.\a" "Homeostasis is a key aspect in the body’s ability to maintain stable internal conditions necessary for primal functioning despite external fluctuations. It’s by far the most important part for sustaining life. One way it does this is by temperature regulation: when the body gets too hot, it triggers mechanisms like sweat to get rid of the heat and to cool down, and vice versa, when it gets too cold, shivering helps generate heat to raise the body’s temperature. In addition to that, homeostasis extends to various other physiological parameters, including pH balance, fluid balance, and oxygen levels. They’re all created by feedback loops involving hormones, nerves, and cellular processes. In conclusion, homeostasis is the body’s internal guardian; it maintains stability amidst ever-changing external environment. What is Homeostasis? (2019, March 7). Scientific American. https://www.scientificamerican.com/article/what-is-homeostasis/";
+  font-size: 1rem;
+  color: #E3C1CE;
+  /* Or any darker shade of pink */
+  position: absolute;
+  padding-top: 20px;
+  top: 0;
+  left: 0;
+  font-family: monospace;
+  background-color: #ffdee3;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+  transform: rotateY(180deg);
+  transition: all 0.3s 0.5s;
+}
+.page__2 {
+  background-color: #ffdee3;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+}
+.page:hover .page__1 {
+  transform: rotateY(-180deg);
+  box-shadow: 1.5rem 2rem 3rem rgba(0, 0, 0, 0.25);
+}
+.page:hover .page__1::after {
+  opacity: 1;
+}
+
+.heart-container {
+  position: relative;
+  width: 200px;
+  height: 260px;
+  left: 80px;
+  top: 170px;
+}
+
+.heart {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotate(-45deg);
+  transition: transform 0.5s;
+  animation: heartbeat 1s infinite alternate;
+  cursor: pointer;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border-radius: 100px 100px 0 0;
+  position: absolute;
+  background-color: #e74c3c;
+  box-shadow: -10px 6px 10px -2px rgba(0, 0, 0, 0.35);
+}
+
+.heart:before {
+  left: 44%;
+  top: 0;
+  transform: scale(-1) rotate(225deg);
+}
+
+.heart:after {
+  left: 0;
+  top: 0;
+  transform: scale(-1) rotate(-225deg);
+}
+
+.page__1 p,
+.page__2 p {
+  font-size: 1.2rem;
+  /* Adjust the value as needed */
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+span {
+  font-size: 200px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  Background: url("https://i.postimg.cc/nc4F5FM2/wave-1.png");
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: #FF2A2A;
+  background-size: cover;
+  background-position-x: 20%;
+  background-position-y: 100%;
+  animation: mymove 10s infinite;
+  -webkit-box-reflect: below -30px linear-gradient(transparent, rgba(0, 0, 0, 0.4));
+}
+
+@keyframes mymove {
+  50% {
+    background-position-x: 100%;
+  }
+}
+.link-4 {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 250px;
+  text-align: center;
+  color: white;
+  font-weight: 999;
+  font-size: 4vw;
+  Background: #FF2442;
+  height: 35px;
+  font-size: 20px;
+  padding-top: 5px;
+  border-radius: 5px;
+  margin-bottom: 5vw;
+  text-decoration: none;
+}
+
+.link-4:hover {
+  color: black;
+}
+
+.Page2_p {
+  font-family: "Lobster", cursive;
+  color: #E3C1CE;
+}
